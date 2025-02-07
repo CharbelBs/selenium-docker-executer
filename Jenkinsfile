@@ -1,18 +1,7 @@
 pipeline {
     agent any
 
-    options {
-        disableConcurrentBuilds()
-        timeout(time: 20, unit: 'MINUTES') // Prevents builds from running too long
-        buildDiscarder(logRotator(numToKeepStr: '10')) // Keep only last 10 builds
-    }
-
     stages {
-        stage('Cleanup Workspace') {
-            steps {
-                cleanWs()  // Cleans up workspace before the build
-            }
-        }
 
         stage('Pull Latest Image') {
             steps {
