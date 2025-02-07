@@ -17,7 +17,7 @@ pipeline {
             }
         }
 
-
+    }
     post {
         always {
             script {
