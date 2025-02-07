@@ -1,4 +1,3 @@
-version: "3"  # Remove the deprecated version "1"
 
 services:
 
@@ -39,5 +38,6 @@ services:
     environment:
       - HUB_HOST=hub
       - BROWSER=chrome
+      - MODULE=testng.xml  # FIXED: Changed tab to spaces here
     volumes:
       - ./output:/app/test-output  # Ensure this directory exists
