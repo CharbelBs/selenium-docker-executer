@@ -11,18 +11,12 @@ pipeline {
             }
         }
 
-        stage('Start Selenium Grid') {
+        stage('Start Selenium Grid and run Tests') {
             steps {
-                bat 'docker-compose up -d --scale chrome=4 hub chrome firefox'
+                bat 'docker-compose up -d --scale chrome=4'
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                bat 'docker-compose up search-module'
-            }
-        }
-    }
 
     post {
         always {
