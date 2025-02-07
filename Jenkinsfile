@@ -20,6 +20,7 @@ pipeline {
                 bat "docker-compose -d --scale chrome=4"
             }
         }
+    }
 
 
     post {
